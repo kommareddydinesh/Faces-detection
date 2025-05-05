@@ -19,8 +19,17 @@ The `haarcascade_frontalface_alt.xml` file is a pre-trained Haar Cascade classif
 - Detect faces using `detectMultiScale`.
 - Draw rectangles around detected faces.
 - Display the result.
-  
-**🖥️ Requirements**
+
+
+## 🖼️ Example (Static Image)
+```python
+img = cv2.imread(image_path)
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+gray = cv2.equalizeHist(gray)
+faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=6, minSize=(40, 40))```
+
+
+****🖥️ Requirements****
 Python 3.x
 OpenCV (cv2)
 Webcam (for live/demo usage)
@@ -29,7 +38,7 @@ Install OpenCV:
 ---In bash/Terminal---
 pip install opencv-python
 
-**▶️ Usage**
+****▶️ Usage****
 Detect from image:
 ---In bash/Terminal---
 python from_image.py
@@ -40,13 +49,6 @@ Detect from a single webcam frame:
 ---In bash/Terminal---
 python one_time.py
 
-**📌 Notes**
+****📌 Notes****
 Make sure haarcascade_frontalface_alt.xml is present in your project directory.
 Adjust parameters like scaleFactor and minNeighbors for improved detection accuracy.
-
-## 🖼️ Example (Static Image)
-```python
-img = cv2.imread(image_path)
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-gray = cv2.equalizeHist(gray)
-faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=6, minSize=(40, 40))```
